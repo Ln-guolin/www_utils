@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>
+			Unix时间戳 - soilove
+		</title>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" type="image/x-icon" href="https://blog.soilove.cn/wp-content/uploads/2017/03/logo.png"/>
+		<meta name="description" content="Unix时间戳">
+		<meta name="keywords" content="Unix,时间戳">
+		<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js">
+		</script>
+		<script src="unix_time.js">
+		</script>
+		<style>
+			.bjtime{float:left;width:40px} #bjc1 span{float:left;margin:4px}
+		</style>
+	</head>
+	<body><font size=2>
+		<br/>
+		<div id="HeaderTitle" style="float:right">
+			代码协作:Unix时间戳，你也可以
+			<a href="https://blog.soilove.cn">
+				前往博客
+			</a>
+			&nbsp; &nbsp; &nbsp;
+		</div>
+		&nbsp;
+		
+			<h4>
+				Unix时间戳
+			</h4>
+			<div class="panel-body" 
+				style="border:solid 1px black;" 
+				onmouseover="this.style.border='1px solid #666699'"
+				onmouseout="this.style.border='1px solid green'">
+				<br/>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">
+						Unix当前时间戳
+					</span>
+					<input type="text" class="form-control" id="now_timestamp" placeholder="">
+				</div>
+				<br/>
+				<div 
+				style="border:solid 1px black;" 
+				onmouseover="this.style.border='1px solid #666699'"
+				onmouseout="this.style.border='1px solid green'">
+					<p>Unix时间戳(Unix timestamp) >> 北京时间:</p>
+					<div class="input-group" style="float: left;width:550px;">
+						<span class="input-group-addon" id="basic-addon1">
+							Unix时间戳：
+						</span>
+						<input type="text" class="form-control" style="width:300px" id="unixtime"
+						placeholder="要转换的时间戳" aria-describedby="basic-addon1">
+					</div>
+					<button type="button" class="btn btn-primary" style="float: left;width:200px"
+					id="toGMT">
+						转换 >>
+					</button>
+					<div class="input-group" style="float: left;width:300px;margin-left: 10px;">
+						<span class="input-group-addon" id="basic-addon1">
+							北京时间：
+						</span>
+						<input type="text" class="form-control" id="result_GMT" style="width:200px"
+						placeholder="转换后的北京时间" aria-describedby="basic-addon1">
+					</div>
+					<br/><br/>
+				</div>
+				<br/>
+				<div 
+				style="border:solid 1px black;" 
+				onmouseover="this.style.border='1px solid #666699'"
+				onmouseout="this.style.border='1px solid green'">
+				<p>北京时间 >>  Unix时间戳(Unix timestamp):</p>
+						<div class="input-group" id="bjc1" style="float: left;width:550px">
+						<span class="input-group-addon" id="basic-addon1">
+							北京时间：
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="year">
+						年
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="month">
+						月
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="day">
+						日
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="hour">
+						时
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="minute">
+						分
+						</span>
+						<span>
+						<input type="text" class="bjtime" id="second">
+						秒
+						</span>
+					</div>
+					<button type="button" class="btn btn-primary" style="float: left;width:200px"
+					id="toUNIX">
+						转换 >>
+					</button>
+					<div class="input-group" style="float: left;width:400px;margin-left: 10px;">
+						<span class="input-group-addon" id="basic-addon1">
+							Unix时间戳：
+						</span>
+						<input type="text" class="form-control" id="result_unix" style="width:200px"
+						placeholder="转换后的时间戳">
+					</div>
+					<br/><br/>
+				</div>
+				<br/><br/>
+			</div>
+		</font>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://": " http://");
+			document.write(unescape("%3Cspan id='cnzz_stat_icon_1259693300'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1259693300%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</body>
+
+</html>

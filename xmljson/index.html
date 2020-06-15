@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>xml/json互转 - soilove</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://blog.soilove.cn/wp-content/uploads/2017/03/logo.png" />
+<meta name="description" content="xml/json互转">
+<meta name="keywords" content="xml/json互转">
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="ObjTree.js"></script>
+<script type="text/javascript" src="jkl-dumper.js"></script>
+<style>.panel-body div{float:left;text-align:center;}.panel-body textarea{width:100%}.panel-body button{margin:5px;}</style>
+</head>
+<body>
+
+<font size=2>
+		<br/>
+		<div id="HeaderTitle" style="float:right">
+			代码协作:xml/json互转，你也可以
+			<a href="https://blog.soilove.cn">
+				前往博客
+			</a>
+			&nbsp; &nbsp; &nbsp;
+		</div>
+		&nbsp;
+		
+			<h4>
+				xml/json互转
+			</h4>
+
+<br/>
+
+<div class="panel-body">
+ 
+	<div style="width: 46%;">
+	<span>XML</span>
+	<textarea id="xml" name="RawJson" class="json_input" rows="30" spellcheck="false" placeholder="要转义的XML"></textarea>
+	</div>
+	<div style="margin-top:20px;padding-right:3px;padding-left:6px;">
+	<p><input id="zyBianma" type="checkbox"></p><p style="font-size: 10px;">转义编码</p>
+	<button id="tojson"><span class="glyphicon glyphicon-arrow-right">to json &rarr;</span></button></p>
+	<p><button id="toxml"><span class="glyphicon glyphicon-arrow-left">&larr; to xml</span></button></p>
+	<p><input id="reset" type="button" value="清空"></p>
+	</div>
+	<div style="width: 46%;">
+	<span>JSON</span>
+	<textarea id="json" name="RawJson" class="json_input" rows="30" spellcheck="false" placeholder="要转义的JSON"></textarea>
+	</div>
+ 
+</div>
+
+
+<script>
+		function repalceFh(c){
+			return c.replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"");
+		}
+		$(function(){
+		
+			$("#tojson").on("click", function(e) {
+						var xotree = new XML.ObjTree();
+					    var dumper = new JKL.Dumper(); 
+						var xmlText = $("#xml").val();
+						if($("#zyBianma").attr("checked")){
+							xmlText = repalceFh(xmlText);
+						}
+						var tree = xotree.parseXML(xmlText);
+						$("#json").val(dumper.dump(tree));
+					});
+					
+					$("#toxml").on("click", function(e) {
+						var xotree = new XML.ObjTree();
+						var json = eval("(" + $("#json").val() + ")");
+						$("#xml").val(formatXml(xotree.writeXML(json))); 
+					});
+					
+	
+			$("#reset").click(function(){
+				$("#xml,#json").val("");
+			});
+		})
+			
+		</script>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259693300'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1259693300%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</body>
+</html>
+
